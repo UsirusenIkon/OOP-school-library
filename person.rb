@@ -10,7 +10,7 @@ class Person
   att_reader :@id
 
   def can_use_services?
-    of_age || @parent_permision
+    of_age || @parent
   end
 
   private
