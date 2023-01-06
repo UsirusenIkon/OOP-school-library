@@ -6,6 +6,7 @@ class Person < Nameable
 
   def initialize(name, age = 'unknown', parent_permision: true)
     super()
+    @id = rand(1...1000)
     @name = name
     @age = age
     @parent = parent_permision
@@ -14,6 +15,7 @@ class Person < Nameable
 
   def add_rental(rental)
     @rentals.push(rental)
+    rental.person = self
   end
 
   def can_use_services?
@@ -21,7 +23,7 @@ class Person < Nameable
   end
 
   def correct_name
-    name
+    @name
   end
 
   private
