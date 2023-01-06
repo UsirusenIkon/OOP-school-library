@@ -1,11 +1,11 @@
 <a name="readme-top"></a>
 
-<div align="center">
+<!-- <div align="center">
 
   <img src="https://raw.githubusercontent.com/microverseinc/readme-template/master/murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-</div>
+</div> -->
 
 <!-- TABLE OF CONTENTS -->
 
