@@ -1,16 +1,29 @@
-class Person
+require_relative 'nameable'
+
+class Person < Nameable
+  attr_accessor :name, :age
+  attr_reader :id, :rentals
+
   def initialize(name, age = 'unknown', parent_permision: true)
+    super()
+    @id = rand(1...1000)
     @name = name
     @age = age
     @parent = parent_permision
+    @rentals = []
   end
 
-  attr_accessor :@name, :@age
-
-  att_reader :@id
+  def add_rental(rental)
+    @rentals.push(rental)
+    rental.person = self
+  end
 
   def can_use_services?
     of_age || @parent
+  end
+
+  def correct_name
+    @name
   end
 
   private
