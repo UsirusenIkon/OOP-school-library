@@ -74,14 +74,15 @@ class App
     puts 'Person(Teacher) created successfully'
   end
 
-  def create_book
-    puts 'Title:'
+  def create_book()
+    puts 'Create a new book'
+    print 'Enter title: '
     title = gets.chomp
-    puts 'Author:'
-    author = gets.chomp
+    print 'Enter author: '
+    author = gets
     book = Book.new(title, author)
-    @books << book
-    puts 'Book created'
+    @books.push(book)
+    puts "Book #{title} created successfully."
   end
 
   def create_rental
