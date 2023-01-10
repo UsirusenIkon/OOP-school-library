@@ -50,16 +50,11 @@ class App
   end
 
   def create_student
-    puts 'Age:'
-    age = gets.chomp
-    puts 'Name:'
-    name = gets.chomp
-    puts 'Has parent permission? [Y/N]'
-    parent_permission = gets.chomp
-    parent_permission = parent_permission.downcase == 'y'
-    student = Student.new(nil, age, name, parent_permission)
-    @people << student
-    puts 'Person(Student) created successfully'
+    student_attributes = student_values
+    student = Student.new(nil, student_attributes[:age], student_attributes[:name],
+    student_attributes[:parent_permission])
+    people << student
+    puts 'Person(student) Created successfully'
   end
 
   def create_teacher
@@ -113,4 +108,19 @@ class App
       puts "Date: #{rental.date}, Book '#{rental.book.title}' by #{rental.book.author}"
     end
   end
+
+  ##### method attributes
+
+private
+
+def student_values
+  puts 'Age'
+  age = gets.chomp
+  puts 'Name:'
+  name = gets.chomp
+  puts 'Has parent permission? [Y/N]'
+  parent_permission = gets.chomp
+  { age: age, name: name, parent_permission: parent_permission.downcase == 'y' }
+end
+
 end
