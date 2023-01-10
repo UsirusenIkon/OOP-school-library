@@ -113,14 +113,23 @@ class App
 
 private
 
-def student_values
-  puts 'Age'
-  age = gets.chomp
-  puts 'Name:'
-  name = gets.chomp
-  puts 'Has parent permission? [Y/N]'
-  parent_permission = gets.chomp
-  { age: age, name: name, parent_permission: parent_permission.downcase == 'y' }
-end
+def create_teacher
+    teacher_attributes = teacher_values
+    teacher = Teacher.new(teacher_attributes[:age],
+    teacher_attributes[:specialization],
+    teacher_attributes[:name])
+    people << teacher
+    puts 'Person(Teacher) created successfully'
+  end
+
+  def teacher_values
+    puts 'Age:'
+    age = gets.chomp
+    puts 'Specialization:'
+    specialization = gets.chomp
+    puts 'Name:'
+    name = gets.chomp
+    { age: age, specialization: specialization, name: name }
+  end
 
 end
