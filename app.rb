@@ -81,7 +81,7 @@ class App
     Teacher.new(age, specialization, name)
   end
 
-  def create_book()
+  def create_book
    print 'Title: '
     title = gets.chomp
     print 'Author: '
@@ -116,25 +116,25 @@ class App
 
   ##### method attributes
 
-  private
+  # private
 
-  def student_values
-    puts 'Age'
-    age = gets.chomp
-    puts 'Name:'
-    name = gets.chomp
-    puts 'Has parent permission? [Y/N]'
-    parent_permission = gets.chomp
-    { age: age, name: name, parent_permission: parent_permission.downcase == 'y' }
-  end
+  # def student_values
+  #   puts 'Age'
+  #   age = gets.chomp
+  #   puts 'Name:'
+  #   name = gets.chomp
+  #   puts 'Has parent permission? [Y/N]'
+  #   parent_permission = gets.chomp
+  #   { age: age, name: name, parent_permission: parent_permission.downcase == 'y' }
+  # end
 
-  def teacher_values
-    puts 'Age:'
-    age = gets.chomp
-    puts 'Specialization:'
-    specialization = gets.chomp
-    puts 'Name:'
-    name = gets.chomp
-    { age: age, specialization: specialization, name: name }
-  end
+  # def teacher_values
+  #   puts 'Age:'
+  #   age = gets.chomp
+  #   puts 'Specialization:'
+  #   specialization = gets.chomp
+  #   puts 'Name:'
+  #   name = gets.chomp
+  #   { age: age, specialization: specialization, name: name }
+  # end
 end
